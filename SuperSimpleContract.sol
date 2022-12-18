@@ -32,21 +32,21 @@ contract simpleContract {
 
 /*
 
-💬You can ask some questions in our Telegramm Chat - https://t.me/+3KEwJhVlSxUyY2Qy
+You can ask some questions in our Telegramm Chat - https://t.me/+3KEwJhVlSxUyY2Qy
 
-💥My OpeanSean NFT - https://opensea.io/BonnyNFT
+My OpeanSean NFT - https://opensea.io/BonnyNFT
 
-💸I reccomend Binance - https://accounts.binance.com/ru/register?ref=PZ2B9P6V
-💸I reccomend ByBit - https://www.bybit.com/ru-RU/invite?ref=WMMJGM
-💸I reccomend ByBit GATE.IO - https://www.gate.io/signup/12859730
+I reccomend Binance - https://accounts.binance.com/ru/register?ref=PZ2B9P6V
+I reccomend ByBit - https://www.bybit.com/ru-RU/invite?ref=WMMJGM
+I reccomend ByBit GATE.IO - https://www.gate.io/signup/12859730
 
-🤖Create Trade Bots Here - https://3commas.io/?c=tc514514
+Create Trade Bots Here - https://3commas.io/?c=tc514514
 
-💼You can buy Stocks Apple, Netflix here  - https://currency.com/trading/signup?c=6cknw8a6&pid=referral
+You can buy Stocks Apple, Netflix here  - https://currency.com/trading/signup?c=6cknw8a6&pid=referral
 
-🗝Grow your crypto securely with Ledger - https://shop.ledger.com?r=bd3c85107f00
+Grow your crypto securely with Ledger - https://shop.ledger.com?r=bd3c85107f00
 
-⚡️You can Support me,  with crypto Transaction ⬇️
+You can Support me,  with crypto Transaction 
 TRX (TRC20) - TAYPRikcdT3kyyVSf3MaNJ52wsQrJFgdJF
 BSC (BEP20) - 0x139558e66ad386a7bac46a67baf5cadbcd4405c0
 BTC (Bitcoin) - 1F8jv1bipH8T5ehjbcourynN1CtbwEsTyP
