@@ -1,34 +1,48 @@
-// SPDX - License-Indentifier:Mit 
+pragma solidity ^0.8.0;
 
-pragma solidity ^0.8.15;
+contract HotelRoom { 
 
-contract simpleContract { 
+    //create an emun with 2 status so we can keep track of our hotel room
+    enum Statuses { Vacant, Occupied }
+    Statuses currentStatus; 
 
-    uint private age;
-    string private name;
+    
+    
+    //create an event to owner, owner need information about one who rented and amount of money
+    event Occupy ( address _occupant, uint _value);
 
-    //set 
+    // owner variable, constructor, and current room status
 
-    function setName ( string memory _name) public { 
-        name = _name;
+    address public  owner;
+    address public tenant; 
+
+    constructor () { 
+        owner = msg.sender; 
+        currentStatus = Statuses.Vacant;
     }
 
-    function setAge ( uint _age ) public {
-        age = _age;
+    // modificator if only Vacant , we get payment; 
+    modifier onlyWhileVacant { 
+        require(currentStatus == Statuses.Vacant, " Currently Occupied");
+        _;
     }
 
-    //get 
-
-    function getName () public view returns ( string memory ) { 
-        return name;
+    // Room price Modificator 
+    modifier price ( uint _amount ) { 
+        require(msg.value >= _amount, "Not enough Money!");
+    _;
     }
 
-    function getAge () public view returns ( uint ) { 
-        return age;
+    // recive function , owner will get money, the Room status will be Occupied
+    receive () external payable onlyWhileVacant price( 2 ether ) {
+        currentStatus = Statuses.Occupied;
+        payable(owner).transfer(msg.value);
+        emit Occupy (msg.sender, msg.value);
+        tenant = msg.sender;
+        
+
     }
 }
-
-
 
 /*
                     ╔═════════════════════════════╗
