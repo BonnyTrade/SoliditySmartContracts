@@ -1,11 +1,15 @@
 pragma solidity ^0.8.0;
 
 
-// one can deposit ether into this contract but you must wait 1 week before you can withdraw your funds
+// one can deposit ether into this contract but you must wait before you can withdraw your funds
 
 contract BankDeposit {
 
+    // create owner and contructor
     address private ownerBank;
+    constructor () payable { 
+        ownerBank = msg.sender; 
+    }
 
     // amount of ether you deposited is saved in balances
     mapping(address => uint) public balances;
@@ -14,20 +18,16 @@ contract BankDeposit {
     // when you can withdraw is saved in lockTime
     mapping(address => uint) public lockTime;
 
-    constructor () payable { 
-        ownerBank = msg.sender; 
-    }
-
     //deposit function
     function deposit() external payable {
 
-        //set minimal deposit 1 ether
+        //set minimal deposit 5 ether
         require(msg.value >= 5 ether, "not enough funds");
 
         //update balance
         balances[msg.sender] +=msg.value;
 
-        //updates locktime 1 week from now
+        //updates locktime 
         lockTime[msg.sender] = block.timestamp + 15;  //15 seconds
 
     }
