@@ -1,71 +1,59 @@
 pragma solidity ^0.8.0;
 
- 
-contract sharedWallet {
-
-    event DepositFunds(address from, uint amount);
-    event WithdrawFunds(address from, uint amount);
-    event TransferFunds(address from, address to, uint amount);
-
-    address private _owner;
+contract SharedWallete { 
 
     //the creator is the owner of the wallet
-    constructor() {
-        _owner = msg.sender;
+    address private owner; 
+
+    constructor () {
+        owner = msg.sender;
     }
 
-    //create a mapping so other addresses can interact with this wallet.
-    mapping(address => uint8) private _owners;
+    //events 
+    event DepositFunds ( address from, address to, uint amount);
+    event WithdrawFunds ( address from , uint amount); 
+    event TranferFunds ( address from , address to, uint amount);
 
+    //create a mapping to safe owners address inside of it  
+    mapping ( address => uint ) public _owners; 
 
-    //in order to interact with the wallet you need to be the owner so added a require statement then execute the function _;
-    modifier isOwner() {
-        require(msg.sender == _owner || _owners[msg.sender] == 1, "Not a owner");
+    // onlyOwnerModificator 
+    modifier onlyOwner() {
+        require(msg.sender == owner || _owners[msg.sender] == 1 , "you are not Owner!");
         _;
     }
 
-   
-    //this function is used to add owners of the wallet.  Only the isOwner can add addresses.  1 means enabled
-    function addOwner(address owner) 
-        isOwner 
-        public {
-        _owners[owner] = 1;
-    }
+    //this function is used to add owners of the wallet.
+    function addOwner( address __owner ) public onlyOwner { 
+        _owners[__owner] = 1; 
+    }  
 
-    
     //remove an owner from the wallet.  0 means disabled
-    function removeOwner(address owner)
-        isOwner
-        public {
-        _owners[owner] = 0;   
+    function removeOwner ( address __owner ) public onlyOwner {
+        _owners[__owner] = 0;
     }
 
-    
     //Anyone can deposit funds into the wallet and emit an event called depositfunds
-    function getPayment()
-        external
-        payable {
-        emit DepositFunds(msg.sender, msg.value);
+    function getpayment () public payable {
+        emit DepositFunds(msg.sender,  address(this), msg.value );
     }
 
-    
-    //to withdraw you need to be an owner, the amount needs to be >= balance of acct.  then transfer and emit an event
-    function withdraw (uint amount)
-        isOwner
-        public {
-        require(address(this).balance >= amount);
-        payable(msg.sender).transfer(amount);
-        emit WithdrawFunds(msg.sender, amount);
+    //to withdraw you need to be an owner, the amount needs to be >= balance of acct.
+    function withdrowFunds ( uint amount ) public onlyOwner { 
+        require(address(this).balance >= amount  , " Not enough Balance ");
+        payable (msg.sender).transfer(amount);
+        emit WithdrawFunds(address(this), amount);
     }
 
-    // function transfer 
-    function transferTo(address payable to, uint amount) 
-        isOwner
-        public {
-        require(address(this).balance >= amount);
+    // transfer Funciton 
+    function transferTo ( address payable to , uint amount ) public onlyOwner { 
+        require(address(this).balance >= amount  , " Not enough Balance ");
         to.transfer(amount);
-        emit TransferFunds(msg.sender, to, amount);
+        emit TranferFunds(address(this), to, amount);
     }
+
+
+
 }
 
 
