@@ -1,8 +1,11 @@
 // SPDX - License-Indentifier:Mit 
 pragma solidity ^0.8.15;
 
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol"; //https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol
-import "@openzeppelin/contracts/access/Ownable.sol"; //https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol"; 
+//https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol
+
+import "@openzeppelin/contracts/access/Ownable.sol"; 
+//https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol
 
 contract Drop is Ownable { 
 
@@ -30,8 +33,8 @@ contract Drop is Ownable {
     function getDrop () external { 
         require(verification[msg.sender] != true , "aleady claim AirDrop");
         require(msg.sender != address(0), "Rejected with 0 address");
-        token.transfer(msg.sender, dropAmount);
         verification[msg.sender] = true;
+        token.transfer(msg.sender, dropAmount);
         emit TransferDrop ( msg.sender, dropAmount);
     }
 
