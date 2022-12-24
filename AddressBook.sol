@@ -6,7 +6,7 @@ pragma solidity ^0.8.15;
 contract AddressBook { 
 
     //maps an address to an address array
-    //As an example your address to a list of addresses you are interested in.  This supports multiple people having an address book
+    list of addresses you a//As an example your address to a re interested in.  This supports multiple people having an address book
     mapping ( address => address[] ) private _addresses;
 
     //maps an address to another map of address to a string
