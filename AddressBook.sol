@@ -70,7 +70,7 @@ contract AddressBook {
                     ║       ADDITIONAL LINKS      ║
                     ╚═════════════════════════════╝
 
-📹BonnyCypro YouTube - https://www.youtube.com/channel/UC5M97bGzgZPC1w1jch4S7nQ
+📹BonnyCrypto YouTube - https://www.youtube.com/channel/UC5M97bGzgZPC1w1jch4S7nQ
 💬You can ask some questions in our Telegramm Chat - https://t.me/+3KEwJhVlSxUyY2Qy
 
 💥My OpeanSean NFT - https://opensea.io/BonnyNFT
