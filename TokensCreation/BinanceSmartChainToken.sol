@@ -7,7 +7,7 @@ Binance Smart Chain (BEP20) Token Creation Guide List
 2. Add BSC MainNet or BSC TestNet To Metamask from ChainList - https://chainlist.org/
 
 3. Send Some Crypto for Your Metamask Wallete to Confirm Transactions Latter 
-    - For MaiNet Chain Send Real Crypto, that You can Buy on Differente Crypto Exchange, for Example ByBit - https://www.bybit.com/ru-RU/invite?ref=WMMJGM
+    - For MaiNet Chain Send Real Crypto,You can Buy on Differente Crypto Exchange, for Example ByBit - https://www.bybit.com/invite?ref=WMMJGM
     - For BSC TestNET you can use this BSC Faucet - https://testnet.bnbchain.org/faucet-smart
 
 4. Create Token Code in OpenZeppelin Wizzard - https://wizard.openzeppelin.com/
