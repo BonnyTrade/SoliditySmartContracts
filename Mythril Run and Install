@@ -1,0 +1,29 @@
+Smash Contract For Fun and Real Profits!
+
+-- Install Docker  -- 
+ 
+1. sudo apt update
+2. sudo apt install apt-transport-https ca-certificates curl software-properties-common
+3. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+4. echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+5. sudo apt update
+6. sudo apt install docker-ce
+7. sudo systemctl start docker
+8. sudo systemctl enable docker
+9. sudo docker --version
+ 
+-- Install Mythril  -- 
+1. docker pull mythril/myth
+ 
+-- Run Mythril Test ( Change Path )   -- 
+1. docker run -v /home/cont/:/contracts mythril/myth myth analyze /contracts/1.sol
+ 
+=============================================================================
+
+Contact us: https://t.me/+3KEwJhVlSxUyY2Qy
+ 
+Donation Us Please:
+TRX (TRC20) - TAYPRikcdT3kyyVSf3MaNJ52wsQrJFgdJF
+BSC (BEP20) - 0x139558e66ad386a7bac46a67baf5cadbcd4405c0
+BTC (Bitcoin) - 1F8jv1bipH8T5ehjbcourynN1CtbwEsTyP
+SOL (Solana) - 79hsAuuGUEzRsHHg3a62tZtodzZqhnrkZdLn11oPhHiR
